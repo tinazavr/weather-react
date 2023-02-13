@@ -7,21 +7,24 @@
   padding-left: 0;
 }
 .Forecast ul li {
-  background-color: rgba(249, 254, 255, 0.3);
-  border-top: 0.5px solid rgba(128, 128, 128, 0.3);
-    border-bottom: 0.5px solid rgba(128, 128, 128, 0.3);
-
+  border-top: 0.5px solid rgba(128, 128, 128, 0.1);
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
   border-radius: 5px;
   padding: 10px 20px;
   list-style-type: none;
-    display: flex;
+  display: flex;
   flex-direction: column;
+}
+.Forecast  ul li:hover {
+  border-top: 0.5px solid rgba(128, 128, 128, 0.3);
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.5);
+  transition: all 200ms ease-in-out;
 }
 .Forecast ul li h5 {
   margin: 5px auto;
-font-weight:lighter;
+  font-weight: lighter;
 }
-.Forecast ul li div{
-    margin: 10px auto 5px;
-    font-size: smaller;
+.Forecast ul li div {
+  margin: 10px auto 5px;
+  font-size: smaller;
 }
