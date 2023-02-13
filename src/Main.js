@@ -1,6 +1,7 @@
 import React from "react";
 import SearchForm from "./SearchForm";
 import TodayWeather from "./TodayWeather";
+import Forecast from "./Forecast";
 
 import "./Main.css";
 
@@ -19,6 +20,7 @@ export default function Main() {
       </nav>
       <SearchForm />
       <TodayWeather />
+      <Forecast />
     </main>
   );
 }

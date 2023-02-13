@@ -3,7 +3,7 @@
   border-radius: 5px;
   padding: 5px 20px 5px;
   margin-top: 40px;
-  height: 300px;
+  max-height: 420px;
 }
 .Main nav ul {
   display: flex;
