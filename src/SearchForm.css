@@ -16,16 +16,19 @@
   padding: 10px 20px;
   margin-left: 10px;
   border-radius: 5px;
+  cursor: pointer;
   background-color: white;
 }
+
+
 .SearchForm button:hover {
-  border-top: 0.5px solid rgba(128, 128, 128, 0.8);
-  border-bottom: 0.5px solid rgba(128, 128, 128, 0.8);
+  border: 0.5px solid rgba(128, 128, 128, 0.8);
   transition: all 200ms ease-in-out;
 }
+
 .SearchForm .searchButton:hover {
-  background-color: rgba(249, 254, 255, 0.5);
+  background-color: rgba(249, 254, 255, 1);
 }
 .SearchForm .currentLocationButton:hover {
-  background-color: rgba(238, 254, 234, 0.5);
+  background-color: rgba(238, 254, 234, 1);
 }
