@@ -14,8 +14,17 @@ export default function TodayWeather() {
       </div>
 
       <div className="todayWeatherBox">
-        <div className="temperatureToday"></div>
-        <div className="parametersToday"></div>
+        <div className="temperatureToday">
+          {/* <img /> */}
+          <div>
+            <h2>14</h2>
+            <h5>°C</h5>
+          </div>{" "}
+        </div>
+        <div className="parametersToday">
+          <h5>Precipitation: 82%</h5>
+          <h5>Wind: 4km/h</h5>
+        </div>
       </div>
     </div>
   );

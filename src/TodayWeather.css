@@ -1,20 +1,23 @@
 .TodayWeather {
-  color: green;
   margin-top: 10px;
 margin-left: 10px;
 }
 .TodayWeather h1{
-font-size:inherit;
-font-weight: 200;
+font-size:larger;
+font-weight: 100;
 margin-top: 0;
 margin-bottom: 0;
+color: rgb(82, 81, 81);
 }
 .TodayWeather p{
-  font-size: x-small;
-  font-weight: 100;
+  font-size: small;
   margin-top: 2px;
+    font-weight:lighter;
+
 }
 
 .todayWeatherBox{
   background-color: blanchedalmond;
+  display: flex;
+  justify-content: space-between;
 }
