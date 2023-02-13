@@ -1,27 +1,31 @@
-.SearchCity {
+.SearchForm {
   margin-left: 10px;
   font-weight: 300;
 }
 
-.SearchCity input[type="search"] {
-padding-left: 10px;
-padding-top: 10px;
-padding-bottom: 10px;
-border-radius: 5px;
-  width: 80%;
-    border: 0.5px solid rgba(128, 128, 128, 0.3);
-
+.SearchForm input[type="search"] {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  width: 60%;
+  border: 0.5px solid rgba(128, 128, 128, 0.3);
 }
-.SearchCity button {
+.SearchForm button {
   border: 0.5px solid rgba(128, 128, 128, 0.3);
   padding: 10px 20px;
   margin-left: 10px;
   border-radius: 5px;
   background-color: white;
 }
-.SearchCity button:hover {
+.SearchForm button:hover {
   border-top: 0.5px solid rgba(128, 128, 128, 0.8);
   border-bottom: 0.5px solid rgba(128, 128, 128, 0.8);
   transition: all 200ms ease-in-out;
+}
+.SearchForm .searchButton:hover {
   background-color: rgba(249, 254, 255, 0.5);
+}
+.SearchForm .currentLocationButton:hover {
+  background-color: rgba(238, 254, 234, 0.5);
 }

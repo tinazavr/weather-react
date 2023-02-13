@@ -1,5 +1,5 @@
 import React from "react";
-import SearchCity from "./SearchCity";
+import SearchForm from "./SearchForm";
 import TodayWeather from "./TodayWeather";
 
 import "./Main.css";
@@ -17,7 +17,7 @@ export default function Main() {
           <li>Split</li>
         </ul>
       </nav>
-      <SearchCity />
+      <SearchForm />
       <TodayWeather />
     </main>
   );

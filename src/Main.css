@@ -3,7 +3,6 @@
   border-radius: 5px;
   padding: 5px 20px 5px;
   margin-top: 40px;
-  width: 600px;
   height: 300px;
 }
 .Main nav ul {
@@ -12,15 +11,19 @@
   padding-left: 0;
 }
 .Main nav ul li {
+  font-size: smaller;
   list-style-type: none;
   padding: 8px 20px;
+  margin-left: 10px;
   margin-right: 10px;
   font-size: smaller;
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
+  border-top: 0.5px solid rgba(128, 128, 128, 0.1);
+  border-radius: 5px;
 }
 
 .Main nav ul li:hover {
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.5);
   border-top: 0.5px solid rgba(128, 128, 128, 0.3);
-  border-bottom: 0.5px solid rgba(128, 128, 128, 0.3);
-  border-radius: 5px;
   transition: all 200ms ease-in-out;
 }
