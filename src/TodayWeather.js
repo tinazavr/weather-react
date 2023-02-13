@@ -1,5 +1,7 @@
 import React from "react";
 import "./TodayWeather.css";
+import ReactAnimatedWeather from 'react-animated-weather';
+
 
 export default function TodayWeather() {
   return (
@@ -9,17 +11,22 @@ export default function TodayWeather() {
         <p>
           Thursday 14:54
           <br />
-          Clouds
+          Rain
         </p>
       </div>
 
       <div className="todayWeatherBox">
         <div className="temperatureToday">
-          {/* <img /> */}
-          <div>
-            <h2>14</h2>
-            <h5>°C</h5>
-          </div>{" "}
+          <ReactAnimatedWeather
+            icon="RAIN"
+            color="grey"
+            size={54}
+            animate={true}
+          />
+
+          <h2>
+            14<span>°C</span>
+          </h2>
         </div>
         <div className="parametersToday">
           <h5>Precipitation: 82%</h5>
