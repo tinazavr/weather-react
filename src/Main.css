@@ -1,0 +1,26 @@
+.Main {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 5px;
+  padding: 5px 20px 5px;
+  margin-top: 40px;
+  width: 600px;
+  height: 300px;
+}
+.Main nav ul {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+}
+.Main nav ul li {
+  list-style-type: none;
+  padding: 8px 20px;
+  margin-right: 10px;
+  font-size: smaller;
+}
+
+.Main nav ul li:hover {
+  border-top: 0.5px solid rgba(128, 128, 128, 0.3);
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.3);
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
+}

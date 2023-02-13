@@ -1,6 +1,7 @@
 .Footer p{
     font-family: 24px;
-}
-.Footer p a{
-    font-size: 40px;
+    text-decoration: none;
+padding: 10px;}
+.Footer p a:hover{
+    color:blueviolet;
 }
