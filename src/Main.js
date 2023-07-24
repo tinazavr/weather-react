@@ -5,21 +5,24 @@ import Forecast from "./Forecast";
 
 import "./Main.css";
 
-
-
 export default function Main() {
-  let navCities = ['Lviv', 'Oslo', 'Paris', 'Split'];
+  let navCities = ["Lviv", "Oslo", "Paris", "Split"];
+
 
   return (
     <main className="Main">
       <nav>
         <ul>
-          {navCities.map(function (city){
-            return <div className = 'navCities'>
-              <li>{city}</li>
+          {navCities.map(function (city) {
+            if (navCities.length >4) {
+              navCities.pop();
+            }
+            return (
+              <div className="navCities">
+                <li>{city}</li>
               </div>
+            );
           })}
-       
         </ul>
       </nav>
       <SearchForm />
