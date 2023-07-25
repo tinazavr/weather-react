@@ -2,11 +2,13 @@
   font-size: smaller;
   text-decoration: none;
   padding: 10px;
-  padding:0;
+  padding: 0;
 }
 .Footer p a {
   text-decoration: none;
+  color: rgba(132, 16, 241, 0.919);
+  opacity: 1
 }
 .Footer p a:hover {
-  color: blueviolet;
+  opacity: 0.8;
 }

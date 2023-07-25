@@ -26,7 +26,7 @@ export default function Main() {
         </ul>
       </nav>
       <SearchForm />
-      <TodayWeather />
+      <TodayWeather  />
       <Forecast />
     </main>
   );
