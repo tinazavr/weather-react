@@ -3,7 +3,7 @@ import axios from "axios";
 
 import ReactAnimatedWeather from "react-animated-weather";
 
-// import TodayWeather from "./TodayWeather";
+import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
 import "./Main.css";
 
@@ -18,6 +18,7 @@ export default function Main() {
   const [humidity, setHumidity] = useState("--");
   const [wind, setWind] = useState("--");
   const [description, setDescription] = useState("--");
+  const [date, setDate] = useState('');
 
   function todayWeather(response) {
     let cityData = response.data;
@@ -28,6 +29,8 @@ export default function Main() {
     setWind(Math.round(cityData.wind.speed));
     setHumidity(Math.round(cityData.main.humidity));
     setDescription(cityData.weather[0].description);
+    setDate(new Date(cityData.dt * 1000));
+    console.log(date);
   }
 
   // let [city, setCity] = useState(props.cityName);
@@ -35,8 +38,8 @@ export default function Main() {
 
   // let [units, setUnits] = useState("metric");
 
-  let units = "metric";
-  const apiKey = "a7a523a612e01faaea696e6bde8c2ea9";
+  let [units, setUnits] = useState("metric");
+  const apiKey = "80837f7b81708cf27e6991c6119a6e84";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(todayWeather);
@@ -49,6 +52,14 @@ export default function Main() {
   }
   function changeCity(event) {
     setSearchCity(event.target.value);
+  }
+  function temperatureToCelsius() {
+    setUnits("metric");
+    axios.get(apiUrl).then(todayWeather);
+  }
+  function temperatureToFahrenheit() {
+    setUnits("imperial");
+    axios.get(apiUrl).then(todayWeather);
   }
 
   return (
@@ -95,7 +106,7 @@ export default function Main() {
               {city} ({country})
             </h1>
             <p>
-              Thursday 14:54
+              <FormattedDate date={date} />
               <br />
               {description}
             </p>
@@ -112,7 +123,19 @@ export default function Main() {
 
               <h2>
                 {temperature}
-                <span>°C</span>
+                <span
+                  onClick={temperatureToCelsius}
+                  className="temperatureCelsius"
+                >
+                  °C
+                </span>
+                <span>|</span>
+                <span
+                  onClick={temperatureToFahrenheit}
+                  className="temperatureFahrenheit"
+                >
+                  °F
+                </span>
               </h2>
             </div>
             <div className="parametersToday">

@@ -111,3 +111,19 @@
   margin-bottom: 0;
   font-weight: lighter;
 }
+
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureCelsius, 
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureFahrenheit{
+cursor: pointer;
+color: rgba(68, 16, 241, 0.919);
+}
+
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureCelsius:hover, 
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureFahrenheit:hover{
+color: rgba(132, 16, 241, 0.919);
+}
+
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureCelsius:active, 
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureFahrenheit:active{
+  color: red;
+}
