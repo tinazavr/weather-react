@@ -12,7 +12,7 @@ export default function Forecast() {
             icon="FOG"
             color="grey"
             size={48}
-            animate={true}
+            animate={false}
           />
           <div>15°C</div>
         </li>
@@ -22,7 +22,7 @@ export default function Forecast() {
             icon="SNOW"
             color="grey"
             size={48}
-            animate={true}
+            animate={false}
           />
           <div>8°C</div>
         </li>{" "}
@@ -32,7 +32,7 @@ export default function Forecast() {
             icon="CLEAR_DAY"
             color="grey"
             size={48}
-            animate={true}
+            animate={false}
           />
           <div>12°C</div>
         </li>{" "}
@@ -42,7 +42,7 @@ export default function Forecast() {
             icon="CLOUDY"
             color="grey"
             size={48}
-            animate={true}
+            animate={false}
           />
           <div>1°C</div>
         </li>
@@ -52,7 +52,7 @@ export default function Forecast() {
             icon="WIND"
             color="grey"
             size={48}
-            animate={true}
+            animate={false}
           />
           <div>8°C</div>
         </li>

@@ -5,12 +5,49 @@
   margin-top: 40px;
   max-height: 420px;
 }
-.Main nav ul {
+
+.Main .searchForm {
+  margin-left: 10px;
+  font-weight: 300;
+}
+
+.Main .searchForm input[type="search"] {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  width: 60%;
+  border: 0.5px solid rgba(128, 128, 128, 0.3);
+}
+.Main .searchForm button {
+  border: 0.5px solid rgba(128, 128, 128, 0.3);
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  color: rgb(100, 100, 100);
+}
+
+.Main .searchForm button:hover {
+  border: 0.5px solid rgba(128, 128, 128, 0.8);
+  transition: all 200ms ease-in-out;
+}
+
+.Main .searchForm .searchButton:hover {
+  background-color: rgba(249, 254, 255, 1);
+}
+.Main .searchForm .currentLocationButton:hover {
+  background-color: rgba(238, 254, 234, 1);
+}
+
+.Main .navMenu ul {
   display: flex;
   flex-direction: row;
   padding-left: 0;
 }
-.Main nav ul li {
+.Main .navMenu ul li {
+  cursor: pointer;
   font-size: smaller;
   list-style-type: none;
   padding: 8px 20px;
@@ -22,8 +59,55 @@
   border-radius: 5px;
 }
 
-.Main nav ul li:hover {
+.Main .navMenu ul li:hover {
   border-top: 0.5px solid rgba(128, 128, 128, 0.5);
   border-bottom: 0.5px solid rgba(128, 128, 128, 0.3);
   transition: all 200ms ease-in-out;
+}
+
+.Main .todayWeather .todayInformation {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.Main .todayWeather .todayInformation .cityNameContainer h1 {
+  font-size: larger;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(82, 81, 81);
+}
+.Main .todayWeather .todayInformation .cityNameContainer p {
+  font-size: small;
+  margin-top: 2px;
+  font-weight: lighter;
+}
+
+.Main .todayWeather .todayInformation .todayWeatherBox {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  /* flex-direction: row;
+  align-items: flex-start; */
+}
+.Main .todayWeather .todayInformation .temperatureToday {
+  width: 250px;
+  display: flex;
+}
+.Main .todayWeather .todayInformation .temperatureToday h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 10px;
+  font-size: xx-large;
+  font-weight: lighter;
+  display: flex;
+}
+.Main .todayWeather .todayInformation .temperatureToday h2 span {
+  font-size: small;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+.Main .todayWeather .todayInformation .parametersToday h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: lighter;
 }

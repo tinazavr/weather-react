@@ -7,9 +7,9 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-        <Main />
-        <Footer />
-      </div>
+      <Main />
+      <Footer />
+    </div>
   );
 }
 
