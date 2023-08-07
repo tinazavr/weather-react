@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Main />
+      <Main default='Yalta' />
       <Footer />
     </div>
   );
