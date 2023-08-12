@@ -106,29 +106,33 @@
   font-weight: lighter;
   display: flex;
 }
-.Main .todayWeather .todayInformation .temperatureToday h2 span {
-  font-size: 22px;
+.Main .todayWeather .todayInformation .temperatureToday h2 .unitsContainer {
+  font-size: 26px;
   align-items: flex-start;
-  margin-top: 4px;
+  margin-top: 0;
 }
 .Main .todayWeather .todayInformation .parametersToday h5 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: lighter;
 }
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday span,
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday span.temperatureCelsius, 
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday span.temperatureFahrenheit{
 
-.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureCelsius, 
-.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureFahrenheit{
+align-self: flex-start;
+}
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday a.temperatureCelsius, 
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday a.temperatureFahrenheit{
 cursor: pointer;
+text-decoration: none;
 color: rgba(68, 16, 241, 0.919);
+
+align-self: flex-start;
+
 }
 
-.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureCelsius:hover, 
-.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureFahrenheit:hover{
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday a.temperatureCelsius:hover, 
+.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday a.temperatureFahrenheit:hover{
 color: rgba(132, 16, 241, 0.919);
-}
-
-.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureCelsius:active, 
-.Main .todayWeather .todayInformation .todayWeatherBox .temperatureToday .temperatureFahrenheit:active{
-  color: red;
 }

@@ -5,6 +5,8 @@ import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
 import WeatherIcon from "./WeatherIcon";
 import "./Main.css";
+import WeatherTemperature from './WeatherTemperature';
+import WindUnits from "./WindUnits";
 
 // import SearchForm from "./SearchForm";
 //let init = false;
@@ -22,9 +24,11 @@ export default function Main(props) {
   const [date, setDate] = useState(new Date());
   let [units, setUnits] = useState("metric");
   let [icon, setIcon] = useState();
-  let [windUnits, setWindUnits] = useState("km/h");
+  //let [windUnits, setWindUnits] = useState("km/h");
 
-
+  function onUnitsChange(unit){
+    setUnits(unit);
+  }
   useEffect(() => {
     getData();
   }, [units, city]);
@@ -58,27 +62,10 @@ export default function Main(props) {
   function clickedSubmit(event) {
     event.preventDefault();
     setCity(searchCity);
-
-    // setCity(event.target.value);
-    //  alert(`search for ${city}`);
   }
   function changeCity(event) {
     setSearchCity(event.target.value);
   }
-  function temperatureToCelsius(event) {
-    event.preventDefault();
-    setUnits("metric");
-    setWindUnits("km/h");
-    // axios.get(apiUrl).then(todayWeather);
-  }
-  function temperatureToFahrenheit(event) {
-    event.preventDefault();
-    setUnits("imperial");
-    setWindUnits("mile/h");
-
-    // axios.get(apiUrl).then(todayWeather);
-  }
-
   return (
     <main className="Main">
       <nav className="navMenu">
@@ -132,26 +119,15 @@ export default function Main(props) {
 
               <h2>
                 {temperature}
-                <span
-                  onClick={temperatureToCelsius}
-                  className="temperatureCelsius"
-                >
-                  °C
-                </span>
-                <span>|</span>
-                <span
-                  onClick={temperatureToFahrenheit}
-                  className="temperatureFahrenheit"
-                >
-                  °F
-                </span>
+                <WeatherTemperature unit={units} onUnitsChange = {onUnitsChange}/>
+              
               </h2>
             </div>
             <div className="parametersToday">
               <h5>Humidity: {humidity} %</h5>
 
               <h5>
-                Wind: {wind} {windUnits}
+                Wind: {wind} <WindUnits unit = {units}/>
               </h5>
             </div>
           </div>

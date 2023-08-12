@@ -1,9 +1,8 @@
-.App{
-      margin-left: 40px;
-color: rgb(100, 100, 100);
-font-family:Verdana, Geneva, Tahoma, sans-serif;
-font-weight:normal;
+.App {
+  margin-left: 40px;
+  color: rgb(100, 100, 100);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
   width: 600px;
-    background-color: rgba(249, 254, 255, 0.3);
-
+  background-color: rgba(249, 254, 255, 0.3);
 }
