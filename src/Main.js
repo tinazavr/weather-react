@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
 import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
-import WeatherIcon from './WeatherIcon'
+import WeatherIcon from "./WeatherIcon";
 import "./Main.css";
 
 // import SearchForm from "./SearchForm";
@@ -13,7 +12,7 @@ import "./Main.css";
 export default function Main(props) {
   let navCities = ["Lviv", "Oslo", "Paris", "Split"];
   console.log(navCities[1]);
-  
+
   const [city, setCity] = useState(props.default);
   const [country, setCountry] = useState("");
   const [temperature, setTemperature] = useState("--");
@@ -23,7 +22,9 @@ export default function Main(props) {
   const [date, setDate] = useState(new Date());
   let [units, setUnits] = useState("metric");
   let [icon, setIcon] = useState();
-  let [windUnits, setWindUnits] = useState('km/h');
+  let [windUnits, setWindUnits] = useState("km/h");
+
+
   useEffect(() => {
     getData();
   }, [units, city]);
@@ -37,7 +38,7 @@ export default function Main(props) {
     setWind(Math.round(cityData.wind.speed));
     setHumidity(Math.round(cityData.main.humidity));
     setDescription(cityData.weather[0].description);
-    setDate(new Date(cityData.dt *1000));
+    setDate(new Date(cityData.dt * 1000));
     setIcon(cityData.weather[0].icon);
     // console.log("its", cityData.dt *1000);
   }
@@ -57,21 +58,23 @@ export default function Main(props) {
   function clickedSubmit(event) {
     event.preventDefault();
     setCity(searchCity);
-  
+
     // setCity(event.target.value);
     //  alert(`search for ${city}`);
   }
   function changeCity(event) {
     setSearchCity(event.target.value);
   }
-  function temperatureToCelsius() {
+  function temperatureToCelsius(event) {
+    event.preventDefault();
     setUnits("metric");
     setWindUnits("km/h");
     // axios.get(apiUrl).then(todayWeather);
   }
-  function temperatureToFahrenheit() {
+  function temperatureToFahrenheit(event) {
+    event.preventDefault();
     setUnits("imperial");
-        setWindUnits("mile/h");
+    setWindUnits("mile/h");
 
     // axios.get(apiUrl).then(todayWeather);
   }
@@ -119,14 +122,13 @@ export default function Main(props) {
             </h1>
             <p>
               <FormattedDate date={date} />
-              <br />
-              {description}
+              <div className="description"> {description}</div>
             </p>
           </div>
 
           <div className="todayWeatherBox">
             <div className="temperatureToday">
-              <WeatherIcon code = {icon} alt={description} />
+              <WeatherIcon code={icon} alt={description} />
 
               <h2>
                 {temperature}
@@ -148,7 +150,9 @@ export default function Main(props) {
             <div className="parametersToday">
               <h5>Humidity: {humidity} %</h5>
 
-              <h5>Wind: {wind} {windUnits}</h5>
+              <h5>
+                Wind: {wind} {windUnits}
+              </h5>
             </div>
           </div>
         </div>
