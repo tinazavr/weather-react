@@ -23,7 +23,7 @@ export default function Main(props) {
   const [date, setDate] = useState(new Date());
   let [units, setUnits] = useState("metric");
   let [icon, setIcon] = useState();
-
+  let [windUnits, setWindUnits] = useState('km/h');
   useEffect(() => {
     getData();
   }, [units, city]);
@@ -66,10 +66,13 @@ export default function Main(props) {
   }
   function temperatureToCelsius() {
     setUnits("metric");
+    setWindUnits("km/h");
     // axios.get(apiUrl).then(todayWeather);
   }
   function temperatureToFahrenheit() {
     setUnits("imperial");
+        setWindUnits("mile/h");
+
     // axios.get(apiUrl).then(todayWeather);
   }
 
@@ -145,7 +148,7 @@ export default function Main(props) {
             <div className="parametersToday">
               <h5>Humidity: {humidity} %</h5>
 
-              <h5>Wind: {wind} km/h</h5>
+              <h5>Wind: {wind} {windUnits}</h5>
             </div>
           </div>
         </div>
