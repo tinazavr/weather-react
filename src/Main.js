@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import ReactAnimatedWeather from "react-animated-weather";
 
 import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
+import WeatherIcon from './WeatherIcon'
 import "./Main.css";
 
 // import SearchForm from "./SearchForm";
-let init = false;
+//let init = false;
 
 export default function Main(props) {
   let navCities = ["Lviv", "Oslo", "Paris", "Split"];
   console.log(navCities[1]);
+  
   const [city, setCity] = useState(props.default);
   const [country, setCountry] = useState("");
   const [temperature, setTemperature] = useState("--");
@@ -21,6 +22,7 @@ export default function Main(props) {
   const [description, setDescription] = useState("--");
   const [date, setDate] = useState(new Date());
   let [units, setUnits] = useState("metric");
+  let [icon, setIcon] = useState();
 
   useEffect(() => {
     getData();
@@ -35,7 +37,8 @@ export default function Main(props) {
     setWind(Math.round(cityData.wind.speed));
     setHumidity(Math.round(cityData.main.humidity));
     setDescription(cityData.weather[0].description);
-    setDate(new Date(cityData.dt));
+    setDate(new Date(cityData.dt *1000));
+    setIcon(cityData.weather[0].icon);
     // console.log("its", cityData.dt *1000);
   }
 
@@ -120,12 +123,7 @@ export default function Main(props) {
 
           <div className="todayWeatherBox">
             <div className="temperatureToday">
-              <ReactAnimatedWeather
-                icon="RAIN"
-                color="grey"
-                size={54}
-                animate={false}
-              />
+              <WeatherIcon code = {icon} alt={description} />
 
               <h2>
                 {temperature}

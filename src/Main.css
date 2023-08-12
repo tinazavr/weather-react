@@ -97,12 +97,12 @@
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 10px;
-  font-size: xx-large;
+  font-size: 45px;
   font-weight: lighter;
   display: flex;
 }
 .Main .todayWeather .todayInformation .temperatureToday h2 span {
-  font-size: small;
+  font-size: 22px;
   align-items: flex-start;
   margin-top: 4px;
 }
