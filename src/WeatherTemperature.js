@@ -13,6 +13,7 @@ event.preventDefault();
   function temperatureToFahrenheit(event) {
     event.preventDefault();
     props.onUnitsChange("imperial");
+
     //setWindUnits("mile/h");
   }
 

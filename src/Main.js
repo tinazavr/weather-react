@@ -5,7 +5,7 @@ import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
 import WeatherIcon from "./WeatherIcon";
 import "./Main.css";
-import WeatherTemperature from './WeatherTemperature';
+import WeatherTemperature from "./WeatherTemperature";
 import WindUnits from "./WindUnits";
 
 // import SearchForm from "./SearchForm";
@@ -26,11 +26,15 @@ export default function Main(props) {
   let [icon, setIcon] = useState();
   //let [windUnits, setWindUnits] = useState("km/h");
 
-  function onUnitsChange(unit){
+  function onUnitsChange(unit) {
     setUnits(unit);
   }
   useEffect(() => {
-    getData();
+    const apiKey = "80837f7b81708cf27e6991c6119a6e84";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+    axios.get(apiUrl).then(todayWeather);
+    //getData();
   }, [units, city]);
 
   function todayWeather(response) {
@@ -52,12 +56,9 @@ export default function Main(props) {
 
   // let [units, setUnits] = useState("metric");
 
-  function getData() {
-    const apiKey = "80837f7b81708cf27e6991c6119a6e84";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  // function getData() {
 
-    axios.get(apiUrl).then(todayWeather);
-  }
+  // }
 
   function clickedSubmit(event) {
     event.preventDefault();
@@ -119,15 +120,17 @@ export default function Main(props) {
 
               <h2>
                 {temperature}
-                <WeatherTemperature unit={units} onUnitsChange = {onUnitsChange}/>
-              
+                <WeatherTemperature
+                  unit={units}
+                  onUnitsChange={onUnitsChange}
+                />
               </h2>
             </div>
             <div className="parametersToday">
               <h5>Humidity: {humidity} %</h5>
 
               <h5>
-                Wind: {wind} <WindUnits unit = {units}/>
+                Wind: {wind} <WindUnits unit={units} />
               </h5>
             </div>
           </div>
