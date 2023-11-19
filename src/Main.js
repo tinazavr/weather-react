@@ -7,10 +7,58 @@ import WeatherIcon from "./WeatherIcon";
 import "./Main.css";
 import WeatherTemperature from "./WeatherTemperature";
 import WindUnits from "./WindUnits";
+import apiKey from "./open-weather-map-token";
 
 // import SearchForm from "./SearchForm";
 //let init = false;
 
+/*
+for (let s in raw_arr[i][j][x]){
+                  if (raw_arr[i][j][x].temp <= 10){
+                      console.log('temp <= 10', raw_arr[i][j][x]);
+                      
+                       
+                    }
+                }
+[
+  [
+    [
+      { name: "NewYork", population: 8623000, temp: 6, currency: "USD" },
+      { name: "Boston", population: 685094, temp: 2, currency: "USD" },
+      { name: "Los Angeles", population: 4000000, temp: 13, currency: "USD" },
+    ],
+    [
+      { name: "San Francisco", population: 884363, temp: 12, currency: "USD" },
+      null,
+      { name: "Charlottesville", population: 48019, temp: 8, currency: "USD" },
+    ],
+    [
+      null,
+      { name: "Seattle", population: 724745, temp: 4, currency: "USD" },
+      null,
+    ],
+  ],
+  [
+    [null, { name: "London", population: 8797000, temp: 11, currency: "GBP" }],
+    [
+      { name: "Birmingham", population: 1086000, temp: 7, currency: "GBP" },
+      null,
+    ],
+  ],
+  [
+    [
+      { name: "Lahore", population: 11130000, temp: 12, currency: "PKR" },
+      { name: "Multan", population: 1872000, temp: 15, currency: "PKR" },
+      { name: "Gujrat", population: 390533, temp: 12, currency: "PKR" },
+    ],
+    [
+      { name: "Karachi", population: 14910000, temp: 20, currency: "PKR" },
+      { name: "Peshawar", population: 1970000, temp: 7, currency: "PKR" },
+      { name: "Islamabad", population: 1015000, temp: 8, currency: "PKR" },
+    ],
+  ],
+];
+*/
 export default function Main(props) {
   let navCities = ["Lviv", "Oslo", "Paris", "Split"];
   console.log(navCities[1]);
@@ -30,7 +78,6 @@ export default function Main(props) {
     setUnits(unit);
   }
   useEffect(() => {
-    const apiKey = "80837f7b81708cf27e6991c6119a6e84";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
     axios.get(apiUrl).then(todayWeather);
@@ -67,6 +114,7 @@ export default function Main(props) {
   function changeCity(event) {
     setSearchCity(event.target.value);
   }
+
   return (
     <main className="Main">
       <nav className="navMenu">
